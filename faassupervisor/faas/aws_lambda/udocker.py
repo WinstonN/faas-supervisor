@@ -123,7 +123,7 @@ class Udocker():
     def _add_container_volumes(self):
         self.cont_cmd.extend(["-v", SysUtils.get_env_var("TMP_INPUT_DIR")])
         self.cont_cmd.extend(["-v", SysUtils.get_env_var("TMP_OUTPUT_DIR")])
-        self.cont_cmd.extend(["-v", "/dev", "-v", "/proc", "-v", "/etc/hosts", "--nosysdirs"])
+        self.cont_cmd.extend(["-v", "/dev", "-v", "/mnt", "-v", "/proc", "-v", "/etc/hosts", "--nosysdirs"])
         if SysUtils.is_var_in_env('EXTRA_PAYLOAD'):
             self.cont_cmd.extend(["-v", self.lambda_instance.PERMANENT_FOLDER])
 
