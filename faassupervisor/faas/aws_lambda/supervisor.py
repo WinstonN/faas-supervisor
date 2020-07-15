@@ -85,6 +85,7 @@ class LambdaSupervisor(DefaultSupervisor):
         }
 
     def create_response(self):
+        print(self.body["udocker_output"])
         return {
             "statusCode": 200,
             "headers": {
