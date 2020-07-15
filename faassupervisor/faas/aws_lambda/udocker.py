@@ -52,7 +52,7 @@ class Udocker():
         return self.udocker_exec + ["load", "-i", self.cont_img_id]
 
     def _download_udocker_image_cmd(self):
-        return self.udocker_exec + ["pull", self.cont_img_id]
+        return self.udocker_exec + ["-D", "pull", self.cont_img_id]
 
     def _list_udocker_containers_cmd(self):
         return self.udocker_exec + ["ps"]
