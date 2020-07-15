@@ -39,7 +39,7 @@ class Udocker():
         FileUtils.create_folder(SysUtils.get_env_var("UDOCKER_DIR"))
         # Init the udocker command that will be executed
         self.udocker_exec = [SysUtils.get_env_var("UDOCKER_EXEC")]
-        self.cont_cmd = self.udocker_exec + ["--allow-root", "--quiet", "run"]
+        self.cont_cmd = self.udocker_exec + ["--quiet --allow-root", "run"]
 
         self.cont_img_id = ConfigUtils.read_cfg_var('container').get('image')
         if not self.cont_img_id:
